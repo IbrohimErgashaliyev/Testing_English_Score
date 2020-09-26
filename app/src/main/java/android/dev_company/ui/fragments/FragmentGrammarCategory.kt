@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.fragment_main.*
  * Creator: Ibrohim Ergashaliyev. Date: 9/21/2020. Time: 13:18
  */
 
-class FragmentMain(): Fragment(R.layout.fragment_main){
+class FragmentGrammarCategory(): Fragment(R.layout.fragment_main){
 
     private val categories = ArrayList<CategoryData>()
 

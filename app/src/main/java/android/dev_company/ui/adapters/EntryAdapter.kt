@@ -39,10 +39,9 @@ class EntryAdapter(val data: List<EntryData>): RecyclerView.Adapter<EntryAdapter
             itemView.apply {
                 image.setImageResource(d.icon)
                 textName.text = d.name
+                //textName.setTextColor(d.textColor)
                 imageStar.setImageResource(if(d.hasLiked) R.drawable.ic_baseline_star_24 else R.drawable.ic_baseline_star_border_24)
             }
         }
     }
-
-
 }

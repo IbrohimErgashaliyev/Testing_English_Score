@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.fragment_first.*
  * Creator: Ibrohim Ergashaliyev. Date: 9/18/2020. Time: 16:42
  */
 
-class FirstFragment : Fragment() {
+class IntoFragment : Fragment() {
 
     private val views = ArrayList<ViewDataInto>()
     private val instance = SharedPreference.instance
@@ -57,7 +57,7 @@ class FirstFragment : Fragment() {
     ): View? {
         if (instance.isOpenedIntoBefore){
             fragmentManager?.beginTransaction()
-                ?.add(R.id.containerLayer, FragmentMainTest())
+                ?.add(R.id.containerLayer, FragmentTestCategory())
                 ?.commit()
         }
         val view = inflater.inflate(R.layout.fragment_first, container, false)
@@ -75,7 +75,7 @@ class FirstFragment : Fragment() {
             }else{
                 instance.isOpenedIntoBefore = true
                 fragmentManager?.beginTransaction()
-                    ?.add(R.id.containerLayer, FragmentMainTest())
+                    ?.add(R.id.containerLayer, FragmentTestCategory())
                     ?.commit()
             }
         }

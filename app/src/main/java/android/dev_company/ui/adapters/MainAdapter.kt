@@ -3,7 +3,6 @@ package android.dev_company.ui.adapters
 import android.dev_company.R
 import android.dev_company.data.models.CategoryData
 import android.dev_company.utils.extensions.inflate
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView

@@ -1,7 +1,8 @@
 package android.dev_company.ui.screens
 
 import android.dev_company.R
-import android.dev_company.ui.fragments.FirstFragment
+import android.dev_company.ui.fragments.ChooseTestGrammarFragment
+import android.dev_company.ui.fragments.IntoFragment
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
@@ -10,9 +11,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val firstFragment = FirstFragment()
+        val firstFragment = IntoFragment()
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.containerLayer, firstFragment)
+        transaction.replace(R.id.containerLayer, ChooseTestGrammarFragment())
         //transaction.addToBackStack("first_fragment")
         transaction.commit()
 
