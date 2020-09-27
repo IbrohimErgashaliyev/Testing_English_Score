@@ -3,6 +3,7 @@ package android.dev_company.ui.adapters
 import android.dev_company.R
 import android.dev_company.data.models.EntryData
 import android.dev_company.utils.extensions.inflate
+import android.graphics.Color
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -39,8 +40,10 @@ class EntryAdapter(val data: List<EntryData>): RecyclerView.Adapter<EntryAdapter
             itemView.apply {
                 image.setImageResource(d.icon)
                 textName.text = d.name
+                textName.setTextColor(Color.parseColor("${d.textColor}"))
+                backColorCircle.setImageResource(d.background)
                 //textName.setTextColor(d.textColor)
-                imageStar.setImageResource(if(d.hasLiked) R.drawable.ic_baseline_star_24 else R.drawable.ic_baseline_star_border_24)
+                //imageStar.setImageResource(if(d.hasLiked) R.drawable.ic_baseline_star_24 else R.drawable.ic_baseline_star_border_24)
             }
         }
     }

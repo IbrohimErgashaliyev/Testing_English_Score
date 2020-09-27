@@ -5,4 +5,10 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="colorResultText">#000</color>
     <color name="colorTextCategory">#fff</color>
+    <color name="colorBeginner">#29A1F4</color>
+    <color name="colorElementary">#7C51FD</color>
+    <color name="colorPreInter">#FF58E3</color>
+    <color name="colorIntermediate">#FF8E47</color>
+    <color name="colorUpperInter">#4C76FB</color>
+    <color name="colorAdvanced">#19C74B</color>
 </resources>

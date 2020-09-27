@@ -26,6 +26,7 @@ class ChooseTestGrammarFragment : Fragment(R.layout.fragment_choose) {
             GrammarTestData(
                 "Grammar",
                 "you can find some grammar details from this section.",
+                R.drawable.grammar,
                 Color.parseColor("#45a123")
             )
         )
@@ -33,6 +34,7 @@ class ChooseTestGrammarFragment : Fragment(R.layout.fragment_choose) {
             GrammarTestData(
                 "Test",
                 "Test your english in order to know your current result.",
+                R.drawable.test,
                 Color.parseColor("#ac1ac8")
             )
         )
@@ -40,6 +42,7 @@ class ChooseTestGrammarFragment : Fragment(R.layout.fragment_choose) {
             GrammarTestData(
                 "Instruction",
                 "Here you can find guideline how to use this application directly.",
+                R.drawable.grammar,
                 Color.parseColor("#2ad618")
             )
         )
@@ -47,6 +50,23 @@ class ChooseTestGrammarFragment : Fragment(R.layout.fragment_choose) {
             GrammarTestData(
                 "About",
                 "About window",
+                R.drawable.test,
+                Color.parseColor("#ac8ac1")
+            )
+        )
+        categories.add(
+            GrammarTestData(
+                "Instruction",
+                "Here you can find guideline how to use this application directly.",
+                R.drawable.grammar,
+                Color.parseColor("#2ad618")
+            )
+        )
+        categories.add(
+            GrammarTestData(
+                "About",
+                "About window",
+                R.drawable.test,
                 Color.parseColor("#ac8ac1")
             )
         )

@@ -27,4 +27,8 @@
         <item name="displayOptions">showHome|useLogo</item>
     </style>-->
 
+    <style name="NightTheme" parent="Theme.MaterialComponents.DayNight">
+
+    </style>
+
 </resources>

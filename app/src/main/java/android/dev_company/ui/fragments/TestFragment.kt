@@ -9,6 +9,7 @@ import android.dev_company.ui.dialogs.DialogResult
 import android.dev_company.ui.presenters.TestPresenter
 import android.os.Bundle
 import android.util.Log
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,7 +26,7 @@ import kotlinx.android.synthetic.main.fragment_test.view.*
  * Creator: Ibrohim Ergashaliyev. Date: 9/19/2020. Time: 10:31
  */
 
-class TestFragment(category: String) : Fragment(), TestContract.View {
+class TestFragment(category: String) : Fragment(), TestContract.View, View.OnKeyListener {
 
     private lateinit var category: String
     private val presenter by lazy { TestPresenter(this, TestRepository(), category) }
@@ -46,6 +47,7 @@ class TestFragment(category: String) : Fragment(), TestContract.View {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
         presenter.loadDataToView()
         view.apply {
             for (i in 0 until 4) {
@@ -56,10 +58,12 @@ class TestFragment(category: String) : Fragment(), TestContract.View {
             }
             buttonNext.setOnClickListener { presenter.clickNext() }
             buttonPrevious.setOnClickListener { presenter.clickPrevious() }
-            buttonBack.setOnClickListener {
-                presenter.clickBack()
-            }
+            buttonBack.setOnClickListener { presenter.clickBack() }
             buttonHome.setOnClickListener { presenter.clickHome() }
+
+            view.isFocusableInTouchMode = true
+            view.requestFocus()
+            view.setOnKeyListener(this@TestFragment)
         }
     }
 
@@ -132,5 +136,16 @@ class TestFragment(category: String) : Fragment(), TestContract.View {
 
     override fun closeFragment() {
         fragmentManager?.popBackStack()
+    }
+
+    override fun onKey(p0: View, p1: Int, p2: KeyEvent): Boolean {
+        /*Log.d("AAA", "view=$p0")
+        Log.d("AAA", "p1 = $p1")
+        Log.d("AAA", "p2 = $p2")*/
+        if ( p1 == KeyEvent.KEYCODE_BACK && p2.action == KeyEvent.ACTION_DOWN ){
+            presenter.clickBack()
+            return true
+        }
+        return false
     }
 }
