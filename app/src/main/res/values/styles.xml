@@ -11,8 +11,8 @@
         <!--<item name="android:actionBarStyle">@style/ThemeHideActionBar</item>
         <item name="actionBarStyle">@style/ThemeHideActionBar</item>
         -->
-        <item name="android:windowActionBarOverlay">true</item>
-        <item name="windowActionBarOverlay">true</item>
+        <!--<item name="android:windowActionBarOverlay">true</item>
+        <item name="windowActionBarOverlay">true</item>-->
 
         <!-- to transparent status bar -->
     <!--<item name="android:windowTranslucentStatus">true</item>

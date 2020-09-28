@@ -9,7 +9,7 @@
     android:layout_height="wrap_content">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:padding="8dp"
+        android:padding="16dp"
         android:src="@drawable/grammar"
         android:id="@+id/imageCat"
         app:layout_constraintLeft_toLeftOf="parent"

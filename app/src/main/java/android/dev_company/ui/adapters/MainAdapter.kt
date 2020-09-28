@@ -6,7 +6,7 @@ import android.dev_company.utils.extensions.inflate
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.item_fragment_main.view.*
+import kotlinx.android.synthetic.main.item_grammar_data.view.*
 
 /**
  * Creator: Ibrohim Ergashaliyev. Date: 9/21/2020. Time: 16:44
@@ -14,8 +14,13 @@ import kotlinx.android.synthetic.main.item_fragment_main.view.*
 
 class MainAdapter(private val ls: List<CategoryData>): RecyclerView.Adapter<MainAdapter.ViewHolder>(){
 
+    private var onClickGrammarCategory: ((CategoryData) -> Unit)? = null
+    fun setOnClickGrammarCategory(f: (CategoryData) -> Unit){
+        onClickGrammarCategory = f
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = parent.inflate(R.layout.item_fragment_main)
+        val view = parent.inflate(R.layout.item_grammar_data)
         return ViewHolder(view)
     }
 
@@ -26,7 +31,7 @@ class MainAdapter(private val ls: List<CategoryData>): RecyclerView.Adapter<Main
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         init {
             itemView.apply {
-                buttonLiked.setOnClickListener {
+                /*buttonLiked.setOnClickListener {
                     if ( ls[adapterPosition].liked ) {
                         buttonLiked.setImageResource(R.drawable.ic_star_uncheck)
                         ls[adapterPosition].liked = false
@@ -34,6 +39,10 @@ class MainAdapter(private val ls: List<CategoryData>): RecyclerView.Adapter<Main
                         buttonLiked.setImageResource(R.drawable.ic_stars_check)
                         ls[adapterPosition].liked = true
                     }
+                }*/
+                setOnClickListener {
+                    onClickGrammarCategory?.invoke(ls[adapterPosition])
+                    // TODO: 9/27/2020 make listener here ...
                 }
             }
         }
@@ -41,7 +50,7 @@ class MainAdapter(private val ls: List<CategoryData>): RecyclerView.Adapter<Main
         fun bind(){
             val d = ls[adapterPosition]
             itemView.apply {
-                imageCategory.setImageResource(d.img)
+                /*imageCategory.setImageResource(d.img)
                 textTitle.text = d.title
                 textDesc.text = d.desc
                 colorBackground.setBackgroundColor(d.backColor)
@@ -50,7 +59,9 @@ class MainAdapter(private val ls: List<CategoryData>): RecyclerView.Adapter<Main
                 textContent.text = "${d.numberContent}"
                 buttonLiked.setImageResource(
                     if ( d.liked ) R.drawable.ic_stars_check else R.drawable.ic_star_uncheck
-                )
+                )*/
+                textName.text = d.title
+                backColor.setBackgroundColor(d.backColor)
             }
         }
     }

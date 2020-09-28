@@ -28,7 +28,7 @@
         <TextView
             android:textSize="22sp"
             android:textColor="#fff"
-            android:text="@string/app_name"
+            android:text="Grammar section"
             android:gravity="center_vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>

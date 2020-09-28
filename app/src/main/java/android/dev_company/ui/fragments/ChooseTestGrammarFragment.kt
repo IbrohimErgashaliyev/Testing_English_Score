@@ -27,7 +27,7 @@ class ChooseTestGrammarFragment : Fragment(R.layout.fragment_choose) {
                 "Grammar",
                 "you can find some grammar details from this section.",
                 R.drawable.grammar,
-                Color.parseColor("#45a123")
+                Color.parseColor("#03A9F4")
             )
         )
         categories.add(
@@ -35,39 +35,39 @@ class ChooseTestGrammarFragment : Fragment(R.layout.fragment_choose) {
                 "Test",
                 "Test your english in order to know your current result.",
                 R.drawable.test,
-                Color.parseColor("#ac1ac8")
+                Color.parseColor("#26C6DA")
             )
         )
         categories.add(
             GrammarTestData(
                 "Instruction",
                 "Here you can find guideline how to use this application directly.",
-                R.drawable.grammar,
-                Color.parseColor("#2ad618")
+                R.drawable.guideline,
+                Color.parseColor("#00E5FF")
             )
         )
         categories.add(
             GrammarTestData(
                 "About",
                 "About window",
-                R.drawable.test,
-                Color.parseColor("#ac8ac1")
+                R.drawable.about,
+                Color.parseColor("#00E676")
             )
         )
         categories.add(
             GrammarTestData(
-                "Instruction",
+                "Settings",
+                "Here you can proper some details to make them to be convenient for you.",
+                R.drawable.settings,
+                Color.parseColor("#a5619d")
+            )
+        )
+        categories.add(
+            GrammarTestData(
+                "Exit",
                 "Here you can find guideline how to use this application directly.",
-                R.drawable.grammar,
-                Color.parseColor("#2ad618")
-            )
-        )
-        categories.add(
-            GrammarTestData(
-                "About",
-                "About window",
-                R.drawable.test,
-                Color.parseColor("#ac8ac1")
+                R.drawable.ic_exit,
+                Color.parseColor("#E65100")
             )
         )
     }
@@ -90,6 +90,9 @@ class ChooseTestGrammarFragment : Fragment(R.layout.fragment_choose) {
                         ?.replace(R.id.containerLayer, FragmentTestCategory())
                         ?.addToBackStack("choose window")
                         ?.commit()
+                }
+                5 -> {
+                    activity?.finish()
                 }
             }
         }

@@ -9,9 +9,10 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:padding="8dp"
-        android:src="@drawable/grammar"
+        android:padding="16dp"
+        android:src="@drawable/guideline"
         android:id="@+id/imageCat"
+        android:scaleType="fitXY"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="120dp"
