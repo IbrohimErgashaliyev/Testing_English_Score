@@ -20,19 +20,13 @@ class FragmentGrammarCategory(): Fragment(R.layout.fragment_main){
     private val categories = ArrayList<CategoryData>()
 
     init {
-        for ( i in 1 until 10 ){
-            val c = CategoryData(
-                "Grammar $i",
-                "This is just a desc",
-                R.drawable.image_profile,
-                Color.parseColor("#4671ae"),
-                i%2 == 0,
-                10*i,
-                20,
-                100
-            )
-            categories.add(c)
-        }
+        categories.add(CategoryData("Present tenses", Color.parseColor("#465acd")))
+        categories.add(CategoryData("Past tenses", Color.parseColor("#761495")))
+        categories.add(CategoryData("Future tenses", Color.parseColor("#a46c10")))
+        categories.add(CategoryData("Prepositions", Color.parseColor("#9ad80d")))
+        categories.add(CategoryData("Continuous tenses", Color.parseColor("#ada5ca")))
+        categories.add(CategoryData("For/Since", Color.parseColor("#ddd222")))
+        categories.add(CategoryData("Passive voice", Color.parseColor("#1199cc")))
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -40,6 +34,8 @@ class FragmentGrammarCategory(): Fragment(R.layout.fragment_main){
 
         list.adapter = adapter
         list.layoutManager = LinearLayoutManager(context)
-        Log.d("AAA", "onViewCreated of MainFr")
+        buttonBack.setOnClickListener {
+            fragmentManager?.popBackStack()
+        }
     }
 }

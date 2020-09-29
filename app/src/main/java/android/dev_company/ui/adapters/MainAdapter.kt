@@ -31,15 +31,6 @@ class MainAdapter(private val ls: List<CategoryData>): RecyclerView.Adapter<Main
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         init {
             itemView.apply {
-                /*buttonLiked.setOnClickListener {
-                    if ( ls[adapterPosition].liked ) {
-                        buttonLiked.setImageResource(R.drawable.ic_star_uncheck)
-                        ls[adapterPosition].liked = false
-                    } else {
-                        buttonLiked.setImageResource(R.drawable.ic_stars_check)
-                        ls[adapterPosition].liked = true
-                    }
-                }*/
                 setOnClickListener {
                     onClickGrammarCategory?.invoke(ls[adapterPosition])
                     // TODO: 9/27/2020 make listener here ...
@@ -50,16 +41,6 @@ class MainAdapter(private val ls: List<CategoryData>): RecyclerView.Adapter<Main
         fun bind(){
             val d = ls[adapterPosition]
             itemView.apply {
-                /*imageCategory.setImageResource(d.img)
-                textTitle.text = d.title
-                textDesc.text = d.desc
-                colorBackground.setBackgroundColor(d.backColor)
-                textBeingTime.text = "${d.beingTime}"
-                textScore.text = "${d.score}"
-                textContent.text = "${d.numberContent}"
-                buttonLiked.setImageResource(
-                    if ( d.liked ) R.drawable.ic_stars_check else R.drawable.ic_star_uncheck
-                )*/
                 textName.text = d.title
                 backColor.setBackgroundColor(d.backColor)
             }

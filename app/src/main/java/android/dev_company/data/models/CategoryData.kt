@@ -6,11 +6,5 @@ package android.dev_company.data.models
 
 data class CategoryData(
     val title: String,
-    val desc: String,
-    val img: Int,
     val backColor: Int,
-    var liked: Boolean,
-    var numberContent: Int,
-    var beingTime: Int,
-    var score: Int
 )

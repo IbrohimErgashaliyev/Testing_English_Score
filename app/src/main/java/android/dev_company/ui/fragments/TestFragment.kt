@@ -139,9 +139,6 @@ class TestFragment(category: String) : Fragment(), TestContract.View, View.OnKey
     }
 
     override fun onKey(p0: View, p1: Int, p2: KeyEvent): Boolean {
-        /*Log.d("AAA", "view=$p0")
-        Log.d("AAA", "p1 = $p1")
-        Log.d("AAA", "p2 = $p2")*/
         if ( p1 == KeyEvent.KEYCODE_BACK && p2.action == KeyEvent.ACTION_DOWN ){
             presenter.clickBack()
             return true
