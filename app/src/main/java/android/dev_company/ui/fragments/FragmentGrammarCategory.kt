@@ -3,6 +3,7 @@ package android.dev_company.ui.fragments
 import android.dev_company.R
 import android.dev_company.data.models.CategoryData
 import android.dev_company.ui.adapters.MainAdapter
+import android.dev_company.utils.extensions.setDivider
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -33,6 +34,7 @@ class FragmentGrammarCategory(): Fragment(R.layout.fragment_main){
         val adapter = MainAdapter(categories)
 
         list.adapter = adapter
+        list.setDivider(R.drawable.recycler_view_divider)
         list.layoutManager = LinearLayoutManager(context)
         buttonBack.setOnClickListener {
             fragmentManager?.popBackStack()
