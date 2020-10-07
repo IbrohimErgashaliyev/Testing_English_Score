@@ -42,7 +42,7 @@ class MainAdapter(private val ls: List<CategoryData>): RecyclerView.Adapter<Main
             val d = ls[adapterPosition]
             itemView.apply {
                 textName.text = d.title
-                backColor.setBackgroundColor(d.backColor)
+                backImage.setBackgroundResource(d.backImage)
             }
         }
     }

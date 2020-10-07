@@ -21,13 +21,13 @@ class FragmentGrammarCategory(): Fragment(R.layout.fragment_main){
     private val categories = ArrayList<CategoryData>()
 
     init {
-        categories.add(CategoryData("Present tenses", Color.parseColor("#465acd")))
-        categories.add(CategoryData("Past tenses", Color.parseColor("#761495")))
-        categories.add(CategoryData("Future tenses", Color.parseColor("#a46c10")))
-        categories.add(CategoryData("Prepositions", Color.parseColor("#9ad80d")))
-        categories.add(CategoryData("Continuous tenses", Color.parseColor("#ada5ca")))
-        categories.add(CategoryData("For/Since", Color.parseColor("#ddd222")))
-        categories.add(CategoryData("Passive voice", Color.parseColor("#1199cc")))
+        categories.add(CategoryData("Present tenses", R.drawable.back1))
+        categories.add(CategoryData("Past tenses", R.drawable.back2))
+        categories.add(CategoryData("Future tenses", R.drawable.back1))
+        categories.add(CategoryData("Prepositions", R.drawable.back2))
+        categories.add(CategoryData("Continuous tenses", R.drawable.back1))
+        categories.add(CategoryData("For/Since", R.drawable.back2))
+        categories.add(CategoryData("Passive voice", R.drawable.back1))
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -38,6 +38,9 @@ class FragmentGrammarCategory(): Fragment(R.layout.fragment_main){
         list.layoutManager = LinearLayoutManager(context)
         buttonBack.setOnClickListener {
             fragmentManager?.popBackStack()
+        }
+        adapter.setOnClickGrammarCategory {
+//            val fr =
         }
     }
 }
