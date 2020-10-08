@@ -10,7 +10,9 @@ import android.dev_company.utils.GrammarCategories.NOUNS
 import android.dev_company.utils.GrammarCategories.POSSESSIVES
 import android.dev_company.utils.GrammarCategories.PRONOUNS
 import android.dev_company.utils.GrammarCategories.VERBS
+import android.dev_company.utils.extensions.changeStatusBarColor
 import android.dev_company.utils.extensions.setDivider
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -36,14 +38,12 @@ class FragmentGrammarCategory(): Fragment(R.layout.fragment_main){
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        changeStatusBarColor(Color.parseColor("#F024263B"))
         val adapter = MainAdapter(categories)
 
         list.adapter = adapter
-        list.setDivider(R.drawable.recycler_view_divider)
+        //list.setDivider(R.drawable.recycler_view_divider)
         list.layoutManager = LinearLayoutManager(context)
-        buttonBack.setOnClickListener {
-            fragmentManager?.popBackStack()
-        }
         adapter.setOnClickGrammarCategory { it, adapterPosition ->
             val fr = SubCategoryGrammarFragment()
             val bundle = arguments ?: Bundle()

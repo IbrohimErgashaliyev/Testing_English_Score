@@ -11,12 +11,10 @@ import kotlinx.android.synthetic.main.web_view_layout.*
 class WebViewFragment(private val url: String): Fragment(R.layout.web_view_layout){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val message = arguments?.getString("MESSAGE", "NULL")
-        textTitle.text = message
+        val title = arguments?.getString("TITLE", "NULL")
+        textTitle.text = title
+        val message = arguments?.getString("MESSAGE", "")
         var baseUrl = "file:///android_asset/${message?.toLowerCase()}/$url"
-        //baseUrl = baseUrl.replace(" ", "")
-        Log.d("AAA", "$baseUrl")
-        Log.d("AAA", "$message")
         webView.loadUrl(baseUrl)
         buttonBack.setOnClickListener { fragmentManager?.popBackStack() }
     }

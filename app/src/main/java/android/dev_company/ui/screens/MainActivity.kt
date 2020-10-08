@@ -15,27 +15,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //hideStatusBar()
         val firstFragment = IntoFragment()
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.containerLayer, ChooseTestGrammarFragment())
-        //transaction.addToBackStack("first_fragment")
         transaction.commit()
-
-        changeNavigationBarColor(Color.parseColor("#AD000000"))
-        changeStatusBarColor(Color.parseColor("#AD000000"))
-    }
-
-    fun hideStatusBar(){
-        window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
-    }
-
-    fun showStatusBar(){
-        window.clearFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
-    }
-
-    override fun onBackPressed() {
-        // TODO: 9/27/2020
-        super.onBackPressed()
     }
 }

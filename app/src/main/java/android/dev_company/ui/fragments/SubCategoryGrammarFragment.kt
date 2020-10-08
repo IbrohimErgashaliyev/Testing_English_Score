@@ -4,6 +4,9 @@ import android.dev_company.R
 import android.dev_company.data.models.CategoryData
 import android.dev_company.ui.adapters.SubCategAdapter
 import android.dev_company.utils.GrammarCategories.PRONOUNS
+import android.dev_company.utils.extensions.changeStatusBarColor
+import android.dev_company.utils.extensions.setDivider
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -22,7 +25,7 @@ class SubCategoryGrammarFragment: Fragment(R.layout.sub_categ_grammar_fragment){
     val data = ArrayList<CategoryData>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        Log.d("AAA", "onViewCreated")
+        changeStatusBarColor(Color.parseColor("#F024263B"))
 
         val category = arguments?.getString("MESSAGE", "")
         when(category){
@@ -34,11 +37,13 @@ class SubCategoryGrammarFragment: Fragment(R.layout.sub_categ_grammar_fragment){
         textTitle.text = category
         val adapter = SubCategAdapter(data)
         list.adapter = adapter
+        list.setDivider(R.drawable.recycler_view_divider)
         list.layoutManager = LinearLayoutManager(context)
         adapter.setOnClickListener {
             var url = it.title.replace(" ", "_").toLowerCase().trim()
             val fr = WebViewFragment("$url.html")
             val bundle = arguments ?: Bundle()
+            bundle.putString("TITLE", it.title)
             fr.arguments = bundle
             fragmentManager?.beginTransaction()
                 ?.replace(R.id.containerLayer, fr)

@@ -3,6 +3,8 @@ package android.dev_company.ui.fragments
 import android.dev_company.R
 import android.dev_company.data.models.GrammarTestData
 import android.dev_company.ui.adapters.CategoryAdapter
+import android.dev_company.utils.extensions.changeNavigationBarColor
+import android.dev_company.utils.extensions.changeStatusBarColor
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
@@ -70,6 +72,7 @@ class ChooseTestGrammarFragment : Fragment(R.layout.fragment_choose) {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        changeStatusBarColor(Color.parseColor("#318BCF"))
         val adapter = CategoryAdapter(categories)
         list.adapter = adapter
         list.layoutManager = LinearLayoutManager(context)

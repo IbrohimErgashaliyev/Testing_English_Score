@@ -40,7 +40,7 @@ class MainAdapter(private val ls: List<CategoryData>): RecyclerView.Adapter<Main
         fun bind(){
             val d = ls[adapterPosition]
             itemView.apply {
-                textName.text = d.title
+                textNameGrammar.text = d.title
             }
         }
     }

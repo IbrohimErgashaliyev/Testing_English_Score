@@ -11,4 +11,5 @@
     <color name="colorIntermediate">#FF8E47</color>
     <color name="colorUpperInter">#4C76FB</color>
     <color name="colorAdvanced">#19C74B</color>
+    <color name="colorMain">#24263B</color>
 </resources>

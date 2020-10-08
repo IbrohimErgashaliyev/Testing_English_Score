@@ -6,6 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
+        android:background="@color/colorMain"
         android:gravity="center_vertical"
         android:layout_width="match_parent"
         android:layout_height="?android:actionBarSize">
@@ -13,14 +14,14 @@
             android:id="@+id/buttonBack"
             android:background="?android:selectableItemBackgroundBorderless"
             android:padding="16dp"
-            android:src="@drawable/ic_baseline_arrow_back_ios_24"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24_white"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"/>
         <TextView
             android:layout_marginRight="16dp"
             android:textStyle="bold"
-            android:textColor="#000"
-            android:textSize="24sp"
+            android:textColor="#fff"
+            android:textSize="18sp"
             android:id="@+id/textTitle"
             tools:text="@string/app_name"
             android:layout_marginLeft="8dp"
@@ -29,6 +30,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:background="@color/colorMain"
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
