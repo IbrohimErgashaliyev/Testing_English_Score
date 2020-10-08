@@ -7,6 +7,5 @@ import androidx.annotation.DrawableRes
  */
 
 data class CategoryData(
-    val title: String,
-    @DrawableRes val backImage: Int,
+    val title: String
 )

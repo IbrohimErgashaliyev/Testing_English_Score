@@ -23,6 +23,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
 }
 
 dependencies {
@@ -62,5 +70,10 @@ dependencies {
      * Secure SharedPreference
      * */
     implementation 'com.scottyab:secure-preferences-lib:0.1.7'
+
+    /**
+     * Advanced web view
+     * */
+    implementation 'com.github.delight-im:Android-AdvancedWebView:v3.0.0'
 
 }

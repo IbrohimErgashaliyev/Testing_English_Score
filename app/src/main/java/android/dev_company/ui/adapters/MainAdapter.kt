@@ -14,8 +14,8 @@ import kotlinx.android.synthetic.main.item_grammar_data.view.*
 
 class MainAdapter(private val ls: List<CategoryData>): RecyclerView.Adapter<MainAdapter.ViewHolder>(){
 
-    private var onClickGrammarCategory: ((CategoryData) -> Unit)? = null
-    fun setOnClickGrammarCategory(f: (CategoryData) -> Unit){
+    private var onClickGrammarCategory: ((CategoryData, Int) -> Unit)? = null
+    fun setOnClickGrammarCategory(f: (CategoryData, Int) -> Unit){
         onClickGrammarCategory = f
     }
 
@@ -32,8 +32,7 @@ class MainAdapter(private val ls: List<CategoryData>): RecyclerView.Adapter<Main
         init {
             itemView.apply {
                 setOnClickListener {
-                    onClickGrammarCategory?.invoke(ls[adapterPosition])
-                    // TODO: 9/27/2020 make listener here ...
+                    onClickGrammarCategory?.invoke(ls[adapterPosition], adapterPosition)
                 }
             }
         }
@@ -42,7 +41,6 @@ class MainAdapter(private val ls: List<CategoryData>): RecyclerView.Adapter<Main
             val d = ls[adapterPosition]
             itemView.apply {
                 textName.text = d.title
-                backImage.setBackgroundResource(d.backImage)
             }
         }
     }

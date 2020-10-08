@@ -12,3 +12,13 @@ const val UPPER_INTERMEDIATE = "Upper-Intermediate"
 const val ADVANCED = "Advanced"
 const val IELTS_FOUNDATION = "IELTS-Foundation"
 const val IELTS_GRADUATION = "IELTS-Graduation"
+
+object GrammarCategories{
+    const val PRONOUNS = "Pronouns"
+    const val Determiners_and_Quantifiers = "Determiners and Quantifiers"
+    const val POSSESSIVES = "Possessives"
+    const val ADJECTIVES = "Adjectives"
+    const val ADVERBIALS = "Adverbials"
+    const val NOUNS = "Nouns"
+    const val VERBS = "Verbs"
+}
