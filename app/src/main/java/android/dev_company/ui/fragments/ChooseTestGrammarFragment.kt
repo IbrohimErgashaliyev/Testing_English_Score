@@ -3,7 +3,6 @@ package android.dev_company.ui.fragments
 import android.dev_company.R
 import android.dev_company.data.models.GrammarTestData
 import android.dev_company.ui.adapters.CategoryAdapter
-import android.dev_company.utils.extensions.changeNavigationBarColor
 import android.dev_company.utils.extensions.changeStatusBarColor
 import android.graphics.Color
 import android.os.Bundle
@@ -24,8 +23,8 @@ class ChooseTestGrammarFragment : Fragment(R.layout.fragment_choose) {
         categories.add(
             GrammarTestData(
                 "Grammar",
-                "you can find some grammar details from this section.",
-                R.drawable.grammar,
+                "you can find some grammar1 details from this section.",
+                R.drawable.grammar1,
                 Color.parseColor("#03A9F4")
             )
         )
@@ -77,24 +76,24 @@ class ChooseTestGrammarFragment : Fragment(R.layout.fragment_choose) {
         list.adapter = adapter
         list.layoutManager = LinearLayoutManager(context)
         adapter.setOnClickListener {
-            Toast.makeText(context, "$it", Toast.LENGTH_SHORT).show()
             when(it){
                 0 -> {
-                    fragmentManager?.beginTransaction()
-                        ?.addToBackStack("choose window")
-                        ?.replace(R.id.containerLayer, FragmentGrammarCategory())
-                        ?.commit()
+                    startFragment(FragmentGrammarCategory())
                 }
                 1 -> {
-                    fragmentManager?.beginTransaction()
-                        ?.replace(R.id.containerLayer, FragmentTestCategory())
-                        ?.addToBackStack("choose window")
-                        ?.commit()
+                    startFragment(FragmentTestCategory())
                 }
                 5 -> {
                     activity?.finish()
                 }
             }
         }
+    }
+
+    private fun startFragment(fr: Fragment){
+        fragmentManager?.beginTransaction()
+            ?.addToBackStack("choose test or grammar")
+            ?.replace(R.id.containerLayer, fr)
+            ?.commit()
     }
 }

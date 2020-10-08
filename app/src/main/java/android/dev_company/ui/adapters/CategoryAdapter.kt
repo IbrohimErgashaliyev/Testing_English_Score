@@ -5,13 +5,8 @@ import android.dev_company.data.models.GrammarTestData
 import android.dev_company.utils.extensions.inflate
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.item_category_leftimage.view.*
-import kotlinx.android.synthetic.main.item_category_leftimage.view.textDesc
-import kotlinx.android.synthetic.main.item_category_leftimage.view.textTitle
-import kotlinx.android.synthetic.main.item_category_leftimage.view.imageCat
-import kotlinx.android.synthetic.main.item_category_rightimage.view.*
+import kotlinx.android.synthetic.main.item_first_fragment.view.*
 
 /**
  * Creator: Ibrohim Ergashaliyev. Date: 9/24/2020. Time: 20:43
@@ -26,8 +21,8 @@ class CategoryAdapter(private val categories: ArrayList<GrammarTestData>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view =
-            parent.inflate(if (viewType == 0) R.layout.item_category_rightimage else R.layout.item_category_leftimage)
+        val view = parent.inflate(R.layout.item_first_fragment)
+        //val view = parent.inflate(if (viewType == 0) R.layout.item_category_rightimage else R.layout.item_category_leftimage)
         return ViewHolder(view)
     }
 
@@ -43,10 +38,9 @@ class CategoryAdapter(private val categories: ArrayList<GrammarTestData>) :
         fun bind() {
             val d = categories[adapterPosition]
             itemView.apply {
-                textTitle.text = d.title
-                textDesc.text = d.description
-                setBackgroundColor(d.backColor)
-                imageCat.setImageResource(d.imageURL)
+                backColor.setBackgroundColor(d.backColor)
+                imageCategory.setImageResource(d.imageURL)
+                textCategory.text = d.title
             }
         }
     }

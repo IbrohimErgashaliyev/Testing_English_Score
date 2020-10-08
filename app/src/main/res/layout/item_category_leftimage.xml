@@ -10,7 +10,7 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:padding="16dp"
-        android:src="@drawable/grammar"
+        android:src="@drawable/grammar1"
         android:id="@+id/imageCat"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
