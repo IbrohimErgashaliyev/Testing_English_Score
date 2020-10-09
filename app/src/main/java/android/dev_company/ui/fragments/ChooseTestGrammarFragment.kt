@@ -92,6 +92,7 @@ class ChooseTestGrammarFragment : Fragment(R.layout.fragment_choose) {
 
     private fun startFragment(fr: Fragment){
         fragmentManager?.beginTransaction()
+            ?.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit)
             ?.addToBackStack("choose test or grammar")
             ?.replace(R.id.containerLayer, fr)
             ?.commit()

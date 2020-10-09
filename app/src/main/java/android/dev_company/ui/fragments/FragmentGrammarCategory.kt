@@ -33,8 +33,8 @@ class FragmentGrammarCategory(): Fragment(R.layout.fragment_main){
         categories.add(CategoryData(POSSESSIVES))
         categories.add(CategoryData(ADJECTIVES))
         categories.add(CategoryData(ADVERBIALS))
-        categories.add(CategoryData(NOUNS))
-        categories.add(CategoryData(VERBS))
+        //categories.add(CategoryData(NOUNS))
+        //categories.add(CategoryData(VERBS))
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -50,6 +50,7 @@ class FragmentGrammarCategory(): Fragment(R.layout.fragment_main){
             bundle.putString("MESSAGE", it.title)
             fr.arguments = bundle
             fragmentManager?.beginTransaction()
+                ?.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit)
                 ?.replace(R.id.containerLayer, fr)
                 ?.addToBackStack("sub_categ_page")
                 ?.commit()

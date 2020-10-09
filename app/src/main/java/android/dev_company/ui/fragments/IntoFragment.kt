@@ -57,6 +57,7 @@ class IntoFragment : Fragment() {
     ): View? {
         if (instance.isOpenedIntoBefore){
             fragmentManager?.beginTransaction()
+                ?.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit)
                 ?.add(R.id.containerLayer, FragmentTestCategory())
                 ?.commit()
         }
@@ -75,6 +76,7 @@ class IntoFragment : Fragment() {
             }else{
                 instance.isOpenedIntoBefore = true
                 fragmentManager?.beginTransaction()
+                    ?.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit)
                     ?.add(R.id.containerLayer, FragmentTestCategory())
                     ?.commit()
             }

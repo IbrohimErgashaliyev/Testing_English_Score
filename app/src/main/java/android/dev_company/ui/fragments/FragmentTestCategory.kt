@@ -117,6 +117,7 @@ class FragmentTestCategory : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        changeStatusBarColor(Color.parseColor("#F024263B"))
 
         view.apply {
             list.adapter = adapter
@@ -129,6 +130,7 @@ class FragmentTestCategory : Fragment() {
             b.putString("NAME", it.name)
             fr.arguments = b
             fragmentManager?.beginTransaction()
+                ?.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit)
                 ?.replace(R.id.containerLayer, fr)
                 ?.addToBackStack("test fragment")
                 ?.commit()
